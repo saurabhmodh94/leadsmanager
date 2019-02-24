@@ -133,3 +133,4 @@ dmypy.json
 node_modules/
 *.lock
 .vscode/
+leadmanager/frontend/static/
