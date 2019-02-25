@@ -9,7 +9,8 @@ import {
   LOGIN_FAIL,
   LOGOUT_SUCCESS,
   REGISTER_SUCCESS,
-  REGISTER_FAIL
+  REGISTER_FAIL,
+  CLEAR_LEADS
 } from "./types";
 
 // CHECK TOKEN & LOAD USER
@@ -88,6 +89,7 @@ export const logout = () => (dispatch, getState) => {
   axios
     .post("/api/auth/logout/", null, tokenConfig(getState))
     .then(res => {
+      dispatch({ type: CLEAR_LEADS });
       dispatch({
         type: LOGOUT_SUCCESS
       });
